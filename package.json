@@ -1,0 +1,19 @@
+{
+  "name": "Chinese Flashcards",
+  "version": "0.0.1",
+  "description": "Flash cards for learning Mandarin",
+  "license": "MIT",
+  "engines": {
+    "node": "7.2.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IvanKelber/chinese-flashcards.git"
+  },
+  "dependencies": {
+  }
+}
