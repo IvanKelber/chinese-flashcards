@@ -8,6 +8,12 @@ module.exports = {
       pinyin,
       definition,
       particle
+    })
+  },
+  getWords() {
+    knex.select('character','pinyin', 'definition', 'particle').from('words')
+    .then(function(words) {
+      console.log(words);
     });
   }
 }

@@ -1,3 +1,7 @@
+/*
+Contains the logic for index.html.
+*/
+
 const CreateWord = document.querySelector('.CreateWord')
 CreateWord.addEventListener('submit', (e) => {
   e.preventDefault()
@@ -7,7 +11,9 @@ CreateWord.addEventListener('submit', (e) => {
   const particle = CreateWord.querySelector('.particle').value
 
   post('/CreateWord', { character, pinyin, definition, particle })
-})
+});
+
+
 function post (path, data) {
   return window.fetch(path, {
     method: 'POST',
