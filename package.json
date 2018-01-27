@@ -1,19 +1,35 @@
 {
-  "name": "Chinese Flashcards",
-  "version": "0.0.1",
-  "description": "Flash cards for learning Mandarin",
-  "license": "MIT",
-  "engines": {
-    "node": "7.2.1"
-  },
+  "name": "flashcards",
+  "version": "1.0.0",
+  "description": "chinese flashcards",
   "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "knex": "^0.14.2",
+    "node-cc-cedict": "^0.1.2",
+    "sqlite3": "^3.1.13"
+  },
+  "devDependencies": {},
   "scripts": {
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/IvanKelber/chinese-flashcards.git"
+    "url": "git+https://github.com/IvanKelber/chinese-flashcards.git"
   },
-  "dependencies": {
-  }
+  "keywords": [
+    "chinese",
+    "mandarin",
+    "flashcards",
+    "language",
+    "studying",
+    "cc-cedict"
+  ],
+  "author": "Ivan Kelber",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IvanKelber/chinese-flashcards/issues"
+  },
+  "homepage": "https://github.com/IvanKelber/chinese-flashcards#readme"
 }
