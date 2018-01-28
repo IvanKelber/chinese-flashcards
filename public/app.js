@@ -6,11 +6,10 @@ const CreateWord = document.querySelector('.CreateWord')
 CreateWord.addEventListener('submit', (e) => {
   e.preventDefault()
   const character = CreateWord.querySelector('.character').value
-  const pinyin = CreateWord.querySelector('.pinyin').value
   const definition = CreateWord.querySelector('.definition').value
   const particle = CreateWord.querySelector('.particle').value
 
-  post('/CreateWord', { character, pinyin, definition, particle })
+  post('/CreateWord', { character, definition, particle })
 });
 
 

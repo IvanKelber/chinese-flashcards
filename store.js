@@ -1,13 +1,16 @@
 const knex = require('knex')(require('./knexfile'))
+var npinyin = require('node-pinyin');
 
 module.exports = {
-  createWord ({ character, pinyin, definition, particle }) {
-    console.log(`Add word ${character}, ${pinyin}, ${definition}, ${particle}`)
+  createWord ({ character, definition, particle }) {
+    console.log(`Add word ${character}, ${definition}, ${particle}`)
+    var pinyin = npinyin(character).join(' ');
+    console.log(pinyin)
     return knex('words').insert({
-      character,
-      pinyin,
-      definition,
-      particle
+      character : character,
+      pinyin : pinyin,
+      definition : definition,
+      particle : particle
     })
   },
   getWords() {
