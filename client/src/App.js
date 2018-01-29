@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Button } from 'react-bootstrap';
+import Card from './components/Card.jsx'
 import logo from './logo.svg';
 import './App.css';
 
@@ -32,9 +34,14 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
+        <body>
+            <Button bsStyle="primary">Flash</Button>
+            <p className="App-intro">
+
             {this.state.response}
-        </p>
+            </p>
+            <Card character="你好" pinyin="ni3hao3" definition='hello' particle="other"/>
+        </body>
       </div>
     );
   }
