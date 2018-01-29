@@ -31,7 +31,7 @@ app.get('/flash', (req, res) => {
     .orderByRaw('RANDOM() LIMIT 2')
     .then(function(words) {
 
-      res.send('\n' + flash(words, 0))
+      res.send(flash(words, 0))
   })
 })
 
@@ -57,5 +57,5 @@ function flash(words, difficulty) {
         flashString += hints.join(", ");
         flashString += "\n\t\n\t"
     })
-    return flashString;
+    return {flash: flashString};
 }
