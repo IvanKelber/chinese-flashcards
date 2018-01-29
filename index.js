@@ -31,7 +31,7 @@ app.get('/flash', (req, res) => {
     .orderByRaw('RANDOM() LIMIT 2')
     .then(function(words) {
 
-      res.send(words)
+      res.send('\n' + flash(words, 0))
   })
 })
 
@@ -48,3 +48,14 @@ app.post('/createWord', (req, res) => {
 app.listen(port, () => {
   console.log('Server running on http://localhost:' + port);
 })
+
+function flash(words, difficulty) {
+    var flashString = 'Word: '
+
+    words.forEach(function(word) {
+        var hints = Object.values(word);
+        flashString += hints.join(", ");
+        flashString += "\n\t\n\t"
+    })
+    return flashString;
+}
