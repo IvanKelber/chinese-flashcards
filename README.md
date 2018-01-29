@@ -1,6 +1,6 @@
 A very basic flashcards application.
 
-**Macro Todo:
+**Macro Todo**:
 
 * Implement React UI (cards, tables, etc.)
 * Alert the user of possible duplicates before they enter
