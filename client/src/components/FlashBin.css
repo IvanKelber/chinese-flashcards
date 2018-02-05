@@ -1,5 +1,9 @@
 .FlashBin {
   text-align: center;
+  align-items: center;
+  width: 400px;
+  flex: 1;
+  flex-direction: row;
 }
 
 .FlashBin-logo {
@@ -21,6 +25,25 @@
 .FlashBin-intro {
   font-size: large;
 }
+
+.Card {
+    align-self: center;
+    background-color: #f4f7fc;
+    border: 5px solid #428bca;
+    border-radius: 50px;
+    margin: 5px;
+}
+
+.Card h1 {
+    font-size: 8vw;
+}
+
+.Card p {
+    font-size: 2vw;
+    color: gray;
+}
+
+
 
 @keyframes FlashBin-logo-spin {
   from { transform: rotate(0deg); }

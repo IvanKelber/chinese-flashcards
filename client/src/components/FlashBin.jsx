@@ -33,7 +33,6 @@ class FlashBin extends Component {
 
     return (
       <div className="FlashBin">
-            <Button bsStyle="primary" onClick={this.callApi}>Flash</Button>
             {this.state.words.map(function(word, index) {
                 return  <Card word={ word } key= { index }/>
             })}

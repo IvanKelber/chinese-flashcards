@@ -33,12 +33,12 @@ class Card extends Component {
             return null;
         }
         return(
-            <Jumbotron>
+            <div className="Card">
                 <h1>{this.props.word[0]}</h1>
                 <p>{this.props.word[1]}</p>
                 <p>{this.props.word[2]}</p>
                 <p>{this.props.word[3]}</p>
-            </Jumbotron>
+            </div>
 
         );
     }
