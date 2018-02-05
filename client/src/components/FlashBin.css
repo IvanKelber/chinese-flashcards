@@ -1,0 +1,28 @@
+.FlashBin {
+  text-align: center;
+}
+
+.FlashBin-logo {
+  animation: FlashBin-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.FlashBin-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.FlashBin-title {
+  font-size: 1.5em;
+}
+
+.FlashBin-intro {
+  font-size: large;
+}
+
+@keyframes FlashBin-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
