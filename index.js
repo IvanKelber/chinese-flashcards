@@ -21,7 +21,7 @@ app.get('/home', (req,res) => {
 app.get('/table', (req, res) => {
   knex.select('character','pinyin','definition','particle').from('words')
     .then(function(words) {
-        res.send(words);
+        res.send(flash(words,0));
   });
 })
 
