@@ -30,6 +30,7 @@ class FlashBin extends Component {
 
   render() {
 
+    
     return (
       <div className="FlashBin">
             {this.state.words.map(function(word, index) {

@@ -1,5 +1,7 @@
 .TableContainer {
+    align-self: center;
+    align-content: center;
+    align-items: center;
     margin: 15px;
     margin-bottom: 100px;
-    width: 500px;
 }

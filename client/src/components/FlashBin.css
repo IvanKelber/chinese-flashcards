@@ -1,5 +1,6 @@
 .FlashBin {
   text-align: center;
+  flex-direction: row;
 }
 
 .FlashBin-logo {
@@ -28,8 +29,8 @@
     border: 5px solid #428bca;
     border-radius: 50px;
     margin: 5px;
-    width: 25vw;
-    height: 40vh;
+    width: 33vw;
+    flex-direction: row;
 }
 
 .Card h1 {
