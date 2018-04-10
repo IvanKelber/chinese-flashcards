@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import {Button} from 'react-bootstrap'
-import {BootstrapTable, TableHeaderColumn, InsertButton} from 'react-bootstrap-table';
-import '../../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
-import './Table.css'
+import {Button} from 'react-bootstrap';
+import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import Modal from "react-overlays/lib/Modal";
+import WordForm from './WordForm.jsx';
+
+//Import CSS
+import '../../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
+import './Table.css';
 
 
 const modalStyle = {
@@ -105,7 +108,7 @@ class Table extends Component {
               show={this.state.modal_open}
               onHide={this.closeModal}>
               <div style={dialogStyle()}>
-                  Hello Darkness My Old Friend
+                  <WordForm />
               </div>
             </Modal>
             <BootstrapTable data={wordsJSON} options={options}
