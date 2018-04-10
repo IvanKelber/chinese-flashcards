@@ -65,12 +65,30 @@ class Table extends Component {
 
       return body;
   };
+
   handleNewWordClick = (onClick) =>{
       console.log('clicked');
       console.log(onClick);
       this.setState({
           modal_open: true
       })
+  }
+
+  handleSubmit = (event) => {
+      event.preventDefault();
+      var data = JSON.stringify({
+          character: this.state.character,
+          definition: this.state.definition,
+          particle: this.state.particle
+      });
+
+      fetch('/createWord', {
+        method: 'POST',
+        body: data,
+        headers: {"Content-Type": "application/json"}
+    }).then(function(resp) {
+        console.log(resp);
+    });
   }
 
   createNewWordButton = (onClick) => {
@@ -108,7 +126,7 @@ class Table extends Component {
               show={this.state.modal_open}
               onHide={this.closeModal}>
               <div style={dialogStyle()}>
-                  <WordForm />
+                  <WordForm refreshTable={this.componentDidMount.bind(this)}/>
               </div>
             </Modal>
             <BootstrapTable data={wordsJSON} options={options}

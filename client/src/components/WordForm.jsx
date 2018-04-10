@@ -3,21 +3,17 @@ import './FlashBin.css';
 
 class WordForm extends Component {
 
+  constructor() {
+      super();
+      this.handleSubmit = this.handleSubmit.bind(this);
+        // We bind this to the handle submit function so that we can reference this from
+        // within handleSubmit
+  }
+
   state = {
     character: '',
     definition: '',
-    particle: ''
-  };
-
-  callApi = async() => {
-      const response = await fetch('/createWord');
-      const body = await response.json();
-      console.log(response);
-      if(response.status !== 200) {
-          throw Error(body.message);
-      }
-
-      return body;
+    particle: '',
   };
 
   handleSubmit = (event) => {
@@ -27,14 +23,17 @@ class WordForm extends Component {
           definition: this.state.definition,
           particle: this.state.particle
       });
-      console.log(data);
+
+
+      var refresh = (resp) => {
+          this.props.refreshTable();
+      }
+
       fetch('/createWord', {
         method: 'POST',
         body: data,
         headers: {"Content-Type": "application/json"}
-    }).then(function(resp) {
-        console.log(resp);
-    });
+    }).then(refresh);
   };
 
   handleChangeCharacter = (event) => {
