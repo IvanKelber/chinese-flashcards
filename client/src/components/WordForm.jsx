@@ -28,12 +28,23 @@ class WordForm extends Component {
       var refresh = (resp) => {
           this.props.refreshTable();
       }
+      fetch('/check', {
+          method: 'POST',
+          body: data,
+          headers: {"Content-Type": "application/json"}
+      }).then(function(resp) {
+          if(resp.status === 200) {
+                fetch('/createWord', {
+                  method: 'POST',
+                  body: data,
+                  headers: {"Content-Type": "application/json"}
+              }).then(refresh);
+          } else {
+              console.log("That character already exists!!");
+          }
+      });
 
-      fetch('/createWord', {
-        method: 'POST',
-        body: data,
-        headers: {"Content-Type": "application/json"}
-    }).then(refresh);
+
   };
 
   handleChangeCharacter = (event) => {

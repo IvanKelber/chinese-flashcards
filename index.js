@@ -35,6 +35,19 @@ app.get('/flash', (req, res) => {
   })
 })
 
+app.post('/check', (req, res) => {
+    knex.count('character as exists')
+    .from('words')
+    .where({
+        character: req.body.character,
+        definition: req.body.definition,
+        particle: req.body.particle
+    })
+    .then(function(count) {
+        count[0].exists === 0 ? res.sendStatus(200) : res.sendStatus(403);
+    });
+})
+
 app.post('/createWord', (req, res) => {
   store
     .createWord({
