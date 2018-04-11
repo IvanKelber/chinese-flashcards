@@ -44,7 +44,7 @@ app.post('/check', (req, res) => {
         particle: req.body.particle
     })
     .then(function(count) {
-        count[0].exists === 0 ? res.sendStatus(200) : res.sendStatus(403);
+        count[0].exists === 0 ? res.sendStatus(200) : res.sendStatus(204);
     });
 })
 

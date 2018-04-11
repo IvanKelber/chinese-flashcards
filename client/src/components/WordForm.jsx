@@ -24,10 +24,19 @@ class WordForm extends Component {
           particle: this.state.particle
       });
 
+      var clearInputs = () => {
+          this.setState({
+              character: '',
+              definition: '',
+              particle: ''
+          });
+      }
 
       var refresh = (resp) => {
           this.props.refreshTable();
       }
+
+
       fetch('/check', {
           method: 'POST',
           body: data,
@@ -42,6 +51,7 @@ class WordForm extends Component {
           } else {
               console.log("That character already exists!!");
           }
+          clearInputs();
       });
 
 
