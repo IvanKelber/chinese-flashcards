@@ -43,7 +43,6 @@ class FlashBin extends Component {
 
   render() {
 
-
     return (
     <div>
       <div className="FlashBin">

@@ -3,26 +3,6 @@
   flex-direction: row;
 }
 
-.FlashBin-logo {
-  animation: FlashBin-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.FlashBin-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.FlashBin-title {
-  font-size: 1.5em;
-}
-
-.FlashBin-intro {
-  font-size: large;
-}
-
 .Card {
     align-self: center;
     background-color: #f4f7fc;
@@ -40,11 +20,4 @@
 .Card p {
     font-size: 4vh;
     color: gray;
-}
-
-
-
-@keyframes FlashBin-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
